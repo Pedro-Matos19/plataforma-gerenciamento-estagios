@@ -4,7 +4,7 @@
 * [Pedro Henrique Matos Oliveira](https://github.com/Pedro-Matos19)
 * [Kévna Tenório Brito Cavalcanti](https://github.com/kevna2329)
 * [Antônio Carlos Batista Vaz](https://github.com/AntonioCVaz)
-* [oão Henrique Araújo de Souza](https://github.com/jota-aga)
+* [João Henrique Araújo de Souza](https://github.com/jota-aga)
 * [José Uilton Ferreira de Siqueira](https://github.com/joseuilton)
 
 ## :page_with_curl: Sobre o Projeto
