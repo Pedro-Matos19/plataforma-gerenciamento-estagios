@@ -48,4 +48,4 @@ O projeto está estruturado em dois diretórios principais (`/backend` e `/front
 
 **Frontend (Pendente):**
 - [ ] Desenvolvimento da tela de Login.
-- [ ] Integração com a API.
+- [ ] Integração com a API..
