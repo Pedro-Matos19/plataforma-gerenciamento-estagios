@@ -35,7 +35,7 @@ O projeto está estruturado em dois diretórios principais (`/backend` e `/front
 ## 🚧 Status do Projeto
 
 ### ✅ Iteração 1: Infraestrutura (Concluída)
-- [x] Configuração do ambiente Java 21 e Spring Boot.
+- [x] Configuração do ambiente Java e Spring Boot.
 - [x] Configuração do banco de dados PostgreSQL.
 - [x] Inicialização do projeto Frontend com Angular.
 - [x] Criação dos repositórios e versionamento inicial.
@@ -47,5 +47,5 @@ O projeto está estruturado em dois diretórios principais (`/backend` e `/front
 - [x] Endpoints de Login e Registro.
 
 **Frontend (Pendente):**
-- [ ] Desenvolvimento da tela de Login.
+- [x] Desenvolvimento da tela de Login.
 - [ ] Integração com a API..
