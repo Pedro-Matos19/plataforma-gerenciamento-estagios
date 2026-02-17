@@ -44,9 +44,8 @@ public class Vaga{
     @ManyToOne
     @JoinColumn(name = "empresa_id", nullable = false)
     private Usuario empresa;
-
-    @Column(nullable = false)
-    private Boolean ativa = true;
+    
+    private StatusDaVaga status;
 
     @PrePersist
     protected void onCreate(){

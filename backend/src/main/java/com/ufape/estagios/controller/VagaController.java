@@ -29,8 +29,8 @@ public class VagaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<VagaResponseDTO>> listarVagasAtivas() {
-        List<VagaResponseDTO> vagas = vagaService.listarVagasAtivas();
+    public ResponseEntity<List<VagaResponseDTO>> listarVagasEmAberto() {
+        List<VagaResponseDTO> vagas = vagaService.listarVagasEmAberto();
         return ResponseEntity.ok(vagas);
     }
 

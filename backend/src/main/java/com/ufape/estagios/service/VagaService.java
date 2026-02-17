@@ -4,6 +4,7 @@ import com.ufape.estagios.dto.VagaRequestDTO;
 import com.ufape.estagios.dto.VagaResponseDTO;
 import com.ufape.estagios.mapper.VagaMapper;
 import com.ufape.estagios.model.Usuario;
+import com.ufape.estagios.model.StatusDaVaga;
 import com.ufape.estagios.model.UserRole;
 import com.ufape.estagios.model.Vaga;
 import com.ufape.estagios.repository.VagaRepository;
@@ -31,13 +32,15 @@ public class VagaService{
 
         Vaga vaga = VagaMapper.toEntity(dto, empresa);
 
+        vaga.setStatus(StatusDaVaga.EM_ABERTO);
+
         Vaga vagaSalva = vagaRepository.save(vaga);
 
         return VagaResponseDTO.fromEntity(vagaSalva);
     }
 
-    public List<VagaResponseDTO> listarVagasAtivas() {
-        return vagaRepository.findByAtivaTrue()
+    public List<VagaResponseDTO> listarVagasEmAberto() {
+        return vagaRepository.findByStatus(StatusDaVaga.EM_ABERTO)
                 .stream()
                 .map(VagaResponseDTO::fromEntity)
                 .collect(Collectors.toList());
@@ -92,7 +95,8 @@ public class VagaService{
             throw new RuntimeException("Você não tem permissão para desativar esta vaga");
         }
 
-        vaga.setAtiva(false);
+
+        vaga.setStatus(StatusDaVaga.ENCERRADA);
         vagaRepository.save(vaga);
     }
 
