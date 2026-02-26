@@ -2,8 +2,6 @@ package com.ufape.estagios.service;
 
 import com.ufape.estagios.dto.VagaRequestDTO;
 import com.ufape.estagios.dto.VagaResponseDTO;
-import com.ufape.estagios.exception.AccessDeniedException;
-import com.ufape.estagios.exception.IdNotFoundException;
 import com.ufape.estagios.mapper.VagaMapper;
 import com.ufape.estagios.model.Usuario;
 import com.ufape.estagios.model.UserRole;
@@ -36,7 +34,7 @@ public class VagaService {
         Usuario empresa = getUsuarioAutenticado();
 
         if (empresa.getRole() != UserRole.COMPANY) {
-        	throw new AccessDeniedException("Only companies can create jobs");
+            throw new RuntimeException("Apenas empresas podem cadastrar vagas");
         }
 
         Vaga vaga = VagaMapper.toEntity(dto, empresa);
@@ -99,7 +97,7 @@ public class VagaService {
         Usuario empresa = getUsuarioAutenticado();
 
         if (empresa.getRole() != UserRole.COMPANY) {
-            throw new AccessDeniedException("Only companies can list your jobs");
+            throw new RuntimeException("Apenas empresas podem listar suas vagas");
         }
 
         return vagaRepository.findByEmpresa(empresa)
@@ -110,7 +108,7 @@ public class VagaService {
 
     public VagaResponseDTO buscarVagaPorId(Long id) {
         Vaga vaga = vagaRepository.findById(id)
-                .orElseThrow(() -> new IdNotFoundException("Job"));
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
 
         return VagaResponseDTO.fromEntity(vaga);
     }
@@ -120,10 +118,10 @@ public class VagaService {
         Usuario empresa = getUsuarioAutenticado();
 
         Vaga vaga = vagaRepository.findById(id)
-                .orElseThrow(() -> new IdNotFoundException("Job"));
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
 
         if (!vaga.getEmpresa().getId().equals(empresa.getId())) {
-        	throw new AccessDeniedException("You dont haver permission to update this job");
+            throw new RuntimeException("Você não tem permissão para editar esta vaga");
         }
 
         vaga = VagaMapper.updateVaga(vaga, dto);
@@ -136,10 +134,10 @@ public class VagaService {
         Usuario empresa = getUsuarioAutenticado();
 
         Vaga vaga = vagaRepository.findById(id)
-                .orElseThrow(() -> new IdNotFoundException("Job"));
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
 
         if (!vaga.getEmpresa().getId().equals(empresa.getId())) {
-            throw new AccessDeniedException("You dont have permission to disable this job");
+            throw new RuntimeException("Você não tem permissão para desativar esta vaga");
         }
 
         vaga.setAtiva(false);
