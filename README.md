@@ -22,12 +22,10 @@ O objetivo principal é aplicar os conhecimentos de desenvolvimento colaborativo
 - Permitir que discentes cadastrem seus currículos e se apliquem às vagas.
 - Otimizar o acompanhamento dos processos seletivos e a gestão de documentos de estágio.
 
-## 🚀 Aplicação em Produção
+## 🚀 Aplicação em Produção (Render)
 
-*(URLs de implantação da Quarta Iteração)*
-
-- **Frontend (Aplicação Web):** [Link do Render aqui]
-- **Backend (API Rest):** [Link do Render aqui]
+- [Frontend](https://frontend-estagios.onrender.com)
+- [Backend](https://backend-estagios.onrender.com)
 
 ## 🛠 Tecnologias Usadas
 
