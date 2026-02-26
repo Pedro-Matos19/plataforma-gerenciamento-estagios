@@ -42,7 +42,7 @@ public class VagaService {
         Vaga vaga = VagaMapper.toEntity(dto, empresa);
         vaga.setStatus(StatusDaVaga.EM_ABERTO);
         Vaga vagaSalva = vagaRepository.save(vaga);
-        return VagaResponseDTO.fromEntity(vagaSalva);
+        return VagaMapper.fromEntity(vagaSalva);
     }
 
     public List<VagaResponseDTO> listarVagasParaEstudantes(String area, String tipo, String local, String sortBy) {
@@ -84,14 +84,14 @@ public class VagaService {
 
         return vagaRepository.findAll(spec, sort)
                 .stream()
-                .map(VagaResponseDTO::fromEntity)
+                .map(VagaMapper::fromEntity)
                 .collect(Collectors.toList());
     }
 
     public List<VagaResponseDTO> listarVagasAtivas() {
         return vagaRepository.findByAtivaTrue()
                 .stream()
-                .map(VagaResponseDTO::fromEntity)
+                .map(VagaMapper::fromEntity)
                 .collect(Collectors.toList());
     }
 
@@ -104,7 +104,7 @@ public class VagaService {
 
         return vagaRepository.findByEmpresa(empresa)
                 .stream()
-                .map(VagaResponseDTO::fromEntity)
+                .map(VagaMapper::fromEntity)
                 .collect(Collectors.toList());
     }
 
@@ -112,7 +112,7 @@ public class VagaService {
         Vaga vaga = vagaRepository.findById(id)
                 .orElseThrow(() -> new IdNotFoundException("Job"));
 
-        return VagaResponseDTO.fromEntity(vaga);
+        return VagaMapper.fromEntity(vaga);
     }
 
     @Transactional
@@ -128,7 +128,7 @@ public class VagaService {
 
         vaga = VagaMapper.updateVaga(vaga, dto);
         Vaga vagaAtualizada = vagaRepository.save(vaga);
-        return VagaResponseDTO.fromEntity(vagaAtualizada);
+        return VagaMapper.fromEntity(vagaAtualizada);
     }
 
     @Transactional
