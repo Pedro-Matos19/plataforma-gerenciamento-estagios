@@ -80,18 +80,22 @@ O projeto está estruturado em dois diretórios principais (`/backend` e `/front
 - [X] Tela de Criação de Vagas com validação de formulário.
 - [X] Testes unitários e integração nos principais services.
 
-### 🔄 Iteração 4: Qualidade, CI/CD e Implantação (Em Andamento)
+### ✅ Iteração 4: Qualidade, CI/CD e Implantação (Concluída)
 
 **Integração Contínua (CI) e Qualidade:**
 - [X] Configuração do ambiente de testes no Backend (`application-test.properties`).
 - [X] Configuração do JaCoCo no Backend para relatórios de cobertura de código.
-- [ ] Configuração do pipeline no GitHub Actions para o Backend (Build, Testes, JaCoCo e SonarCloud).
-- [ ] Configuração do pipeline no GitHub Actions para o Frontend (Build e Testes).
-- [ ] Integração do Backend com a versão gratuita do SonarCloud.
-- [ ] Refatoração de código para atender aos critérios de qualidade (0 bugs de segurança, 0 code smells críticos, < 20% de duplicação).
+- [X] Configuração do pipeline no GitHub Actions para o Backend (Build, Testes, JaCoCo e SonarCloud).
+- [X] Configuração do pipeline no GitHub Actions para o Frontend (Build e Testes).
+- [X] Integração do Backend com a versão gratuita do SonarCloud.
+- [X] Refatoração de código para atender aos critérios de qualidade (0 bugs de segurança, 0 code smells críticos, < 20% de duplicação).
 
 **Implantação Contínua (CD) e Release:**
-- [x] Containerização da aplicação com Docker.
-- [ ] Implantação automatizada do Backend no Render.
-- [ ] Implantação automatizada do Frontend no Render.
-- [ ] Publicação do Release final da iteração no repositório.
+- [X] Containerização da aplicação com Docker.
+- [X] Implantação automatizada do Backend no Render.
+- [X] Implantação automatizada do Frontend no Render.
+- [X] Publicação do Release final da iteração no repositório.
+
+#### 
+Evidências execução SonarCloud
+![1772156748702](image/README/1772156748702.png)
