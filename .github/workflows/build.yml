@@ -45,8 +45,8 @@ jobs:
           mvn -B
           -f backend/pom.xml
           org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-          -Dsonar.projectKey=plataforma-estagios_plataforma-gerenciamento-estagios
-          -Dsonar.organization=plataforma-estagios
+          -Dsonar.projectKey=Pedro-Matos19_plataforma-gerenciamento-estagios
+          -Dsonar.organization=pedro-matos19
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.coverage.jacoco.xmlReportPaths=backend/target/site/jacoco/jacoco.xml
 
