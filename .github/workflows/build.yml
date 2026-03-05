@@ -38,8 +38,9 @@ jobs:
             sonar-${{ runner.os }}-
 
       - name: Análise SonarCloud
+        if: github.event_name == 'push'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
           mvn -B
